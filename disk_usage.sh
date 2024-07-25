@@ -3,7 +3,7 @@
 check_disk_space(){
 
 local threshold=90
-local disk_usage=$(df -h / | awk 'NR==2 { print $6 }' | sed 's/%//')
+local disk_usage=$(df -h / | awk 'NR==2 { print $5 }' | sed 's/%//')
 
 
 if [ "${disk_usage}" -ge "$threshold" ]; then
